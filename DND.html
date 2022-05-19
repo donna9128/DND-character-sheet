@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -22,6 +23,7 @@
             border-radius: 4px;
             background-color: white;
             text-align: center;
+            line-height: 100%;
         }
 
         .bonus {
@@ -32,8 +34,9 @@
             border-radius: 4px;
             background-color: white;
             text-align: center;
-            margin-top: -10px;
+            margin-top: -15px;
             margin-bottom: 10px;
+            line-height: 15px;
         }
 
         .container {
@@ -45,105 +48,130 @@
             border-radius: 4px;
             padding: 10px;
             max-width: 175px;
+            height: 250px;
 
         }
-        #userInput{
+
+        input{
           max-width: 60px;
           margin-bottom: 5px;
           text-align: center;
           font-family: inherit;
         }
-        #button{
+
+        button{
             background-color: rgb(131, 6, 16);
             border-radius: 4px;
             color: whitesmoke;
             font-family: inherit;
         }
-        .bigcontainer{
+
+        .bigcontainer{        
             display: flex;
+            flex-wrap: wrap;
+            align-content: center;
             justify-content: space-evenly;
 
+
+            
         }
+        #background{
+            background-image: url("dndlogo.jpg"), url("dndlogo.jpg");
+            background-size: cover;
+            height: 100vh;
+            filter: grayscale(50%);
+        }
+
     </style>
 
     <script>
-        function addScore() {
-            document.getElementById('score').innerHTML=document.getElementById("userInput").value;
-            var x = document.getElementById("userInput").value;
-            document.getElementById('bonus').innerHTML=Math.floor((x - 10) / 2);
+        function addScore(score, bonus, input) {
+            document.getElementById(score).innerHTML=document.getElementById(input).value;
+            var x = document.getElementById(input).value;
+            document.getElementById(bonus).innerHTML=Math.floor((x - 10) / 2);
         }
     </script>
 </head>
+
 <body>
-    <div class="bigcontainer">
+    <div class="bigcontainer" id="background">
         <div class="container">
+
             <div class="score">
                 <h3>Strength</h3>
-                 <h1 id="score">18</h1>        
+                 <h1 id="str">10</h1>        
             </div>
             <div class="bonus">
-                <h3 id="bonus">+4</h3>
+                <h3 id="strbonus">0</h3>
             </div>
-            <input type="number" id="userInput">
-            <button onclick="addScore()" id="button">Click Me</button>
+            <input type="number" id="strInput">
+            <button onclick="addScore('str', 'strbonus', 'strInput')" id="button">Update</button> 
         </div>
-        <div class="container">
-            <div class="score">
-                <h3>Constitution</h3>
-                 <h1 id="score">18</h1>        
-            </div>
-            <div class="bonus">
-                <h3 id="bonus">+4</h3>
-            </div>
-            <input type="number" id="userInput">
-            <button onclick="addScore()" id="button">Click Me</button>
-        </div>
+
         <div class="container">
             <div class="score">
                 <h3>Dexterity</h3>
-                 <h1 id="score">18</h1>        
+                 <h1 id="dex">10</h1>        
             </div>
             <div class="bonus">
-                <h3 id="bonus">+4</h3>
+                <h3 id="dexbonus">0</h3>
             </div>
-            <input type="number" id="userInput">
-            <button onclick="addScore()" id="button">Click Me</button>
+            <input type="number" id="dexInput">
+            <button onclick="addScore('dex', 'dexbonus', 'dexInput')" id="button">Update</button> 
         </div>
+
         <div class="container">
             <div class="score">
-                <h3>Intelligence</h3>
-                 <h1 id="score">18</h1>        
+                <h3>Constitution</h3>
+                 <h1 id="con">10</h1>        
             </div>
             <div class="bonus">
-                <h3 id="bonus">+4</h3>
+                <h3 id="conbonus">0</h3>
             </div>
-            <input type="number" id="userInput">
-            <button onclick="addScore()" id="button">Click Me</button>
+            <input type="number" id="conInput">
+            <button onclick="addScore('con', 'conbonus', 'conInput')" id="button">Update</button> 
         </div>
+
         <div class="container">
             <div class="score">
                 <h3>Wisdom</h3>
-                 <h1 id="score">18</h1>        
+                 <h1 id="wis">10</h1>        
             </div>
             <div class="bonus">
-                <h3 id="bonus">+4</h3>
+                <h3 id="wisbonus">0</h3>
             </div>
-            <input type="number" id="userInput">
-            <button onclick="addScore()" id="button">Click Me</button>
+            <input type="number" id="wisInput">
+            <button onclick="addScore('wis', 'wisbonus', 'wisInput')" id="button">Update</button> 
         </div>
+
+        <div class="container">
+            <div class="score">
+                <h3>Intelligence</h3>
+                 <h1 id="int">10</h1>        
+            </div>
+            <div class="bonus">
+                <h3 id="intbonus">0</h3>
+            </div>
+            <input type="number" id="intInput">
+            <button onclick="addScore('int', 'intbonus', 'intInput')" id="button">Update</button> 
+        </div>
+
         <div class="container">
             <div class="score">
                 <h3>Charisma</h3>
-                 <h1 id="score">18</h1>        
+                 <h1 id="cha">10</h1>        
             </div>
             <div class="bonus">
-                <h3 id="bonus">+4</h3>
+                <h3 id="chabonus">0</h3>
             </div>
-            <input type="number" id="userInput">
-            <button onclick="addScore()" id="button">Click Me</button>
+            <input type="number" id="chaInput">
+            <button onclick="addScore('cha', 'chabonus', 'chaInput')" id="button">Update</button> 
         </div>
+
     </div>
+
     
 </body>
 </html>
+
 
